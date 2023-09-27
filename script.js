@@ -9,7 +9,7 @@ ficheros.forEach(fichero => {
 function examenJS(entrada){
 
     if (entrada.length === 0) {
-        throw new Error("El fichero está vacío");
+        throw new Error("El fichero está vacío")
     }
 
     // Parseamos el CSV
@@ -28,7 +28,12 @@ function examenJS(entrada){
             output[keyRegex] = []
         }
         // Limpiamos el dato con una regex
-        let valueRegex = data[1].trim().replace(/^["']|["']$/g, '')
+        try {
+            let valueRegex = data[1].trim().replace(/^["']|["']$/g, '')
+        } catch (error) {
+            throw new Error("Revisa el formatillo eh")
+        }
+        
         // Aplicamos Regex para comprobar si la cadena es un numero
         if (/^[0-9]*$/.test(valueRegex) || /^[0-9]*$/.test(keyRegex)) {
             throw new Error("Miguel se te ha colado un numerillo eh");
