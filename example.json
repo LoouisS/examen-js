@@ -1,0 +1,10 @@
+[
+    {
+        "nombre": "Madrid",
+        "jugadores": ["jugador1", "jugador2", "jugador3"]
+    },
+    {
+        "nombre": "Barcelona",
+        "jugadores": ["jugador4", "jugador5"]
+    }
+]
