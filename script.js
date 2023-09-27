@@ -28,11 +28,8 @@ function examenJS(entrada){
             output[keyRegex] = []
         }
         // Limpiamos el dato con una regex
-        try {
-            let valueRegex = data[1].trim().replace(/^["']|["']$/g, '')
-        } catch (error) {
-            throw new Error("Revisa el formatillo eh")
-        }
+
+        let valueRegex = data[1].trim().replace(/^["']|["']$/g, '')
         
         // Aplicamos Regex para comprobar si la cadena es un numero
         if (/^[0-9]*$/.test(valueRegex) || /^[0-9]*$/.test(keyRegex)) {
